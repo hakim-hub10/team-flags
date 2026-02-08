@@ -68,8 +68,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # Copy only necessary files from builder
 # This keeps the final image small
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/next.config.ts ./next.config.ts
+COPY --from=builder /app/.next ./.next
 
 # Copy Next.js standalone build
 # Standalone mode creates a minimal production build
